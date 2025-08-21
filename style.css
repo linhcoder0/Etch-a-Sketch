@@ -21,3 +21,16 @@
   flex: 1 1 0px;
   border:1px solid black;
 }
+
+.Btn{
+  display:flex;
+  justify-content: center;
+  margin-bottom:10px;
+}
+
+#restartBtn{
+  height:150px;
+  width:400px;
+  border:solid black;
+  border-radius: 2px;
+}
