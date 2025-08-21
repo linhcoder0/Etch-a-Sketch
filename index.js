@@ -1,26 +1,6 @@
-let side = prompt("Enter a number less than 100.");
-    while (side > 100){
-        side = prompt("Number too high. Please input a number less than 100.");
-    }
-    
-const Btn = document.createElement("div")
-Btn.setAttribute("class", "Btn")
-document.body.appendChild(Btn);
-
-const restartBtn = document.createElement("button")
-restartBtn.setAttribute("id", "restartBtn")
-Btn.appendChild(restartBtn);
-
-const container = document.createElement("div")
-container.setAttribute("class", "container")
-document.body.appendChild(container);
-
-const grid = document.createElement("div")
-grid.setAttribute("class", "grid")
-container.appendChild(grid);
-
-
-for(let i = 0; i<side; i++){
+function generateSquares(){
+    grid.innerHTML='';
+    for(let i = 0; i<side; i++){
     const vertical = document.createElement("div")
     vertical.setAttribute("class", "vertical")
     grid.appendChild(vertical);
@@ -34,4 +14,39 @@ for(let i = 0; i<side; i++){
 
         vertical.appendChild(horizontal);
     }
+    }
 }
+
+let side = prompt("Enter a number less than 100.", "1");
+    while (side > 100){
+        side = prompt("Number too high. Please input a number less than 100.");
+    }
+
+const Btn = document.createElement("div")
+Btn.setAttribute("class", "Btn")
+document.body.appendChild(Btn);
+
+const restartBtn = document.createElement("button")
+restartBtn.setAttribute("id", "restartBtn")
+
+restartBtn.addEventListener('click', (e) =>{
+    side = 0;
+    side = prompt("Enter a number less than 100.", "1");
+        while (side > 100){
+        side = prompt("Number too high. Please input a number less than 100.");
+    }
+    generateSquares();
+})
+
+Btn.appendChild(restartBtn);
+
+const container = document.createElement("div")
+container.setAttribute("class", "container")
+document.body.appendChild(container);
+
+const grid = document.createElement("div")
+grid.setAttribute("class", "grid")
+container.appendChild(grid);
+
+
+generateSquares();
