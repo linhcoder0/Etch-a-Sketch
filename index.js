@@ -13,7 +13,7 @@ function generateSquares(){
             })
 
         vertical.appendChild(horizontal);
-    }
+        }
     }
 }
 
@@ -38,7 +38,15 @@ restartBtn.addEventListener('click', (e) =>{
     generateSquares();
 })
 
+const clearBtn = document.createElement("button")
+clearBtn.setAttribute("id", "clearBtn")
+clearBtn.innerHTML = "CLEAR"
+clearBtn.addEventListener('click', (e) =>{
+    generateSquares();
+})
+
 Btn.appendChild(restartBtn);
+Btn.appendChild(clearBtn);
 
 const container = document.createElement("div")
 container.setAttribute("class", "container")
